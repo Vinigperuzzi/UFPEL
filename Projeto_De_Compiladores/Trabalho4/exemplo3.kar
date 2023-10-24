@@ -1,0 +1,48 @@
+void main () {
+    newVar integer teste; newVar integer param1; newVar integer param2;
+    newVar integer op; newVar integer resultado;
+    newVar bool certo_teste_0;
+    teste = System.readint();
+    while ((teste == 0)){
+        param1 = System.readint();
+        param2 = System.readint();
+        repeat{
+            op = System.readint();
+            if (((op > 0) & (op < 5)))
+                then {
+                    certo_teste_0 = true;
+                };
+        } until (certo_teste_0);
+        certo_teste_0 = false;
+        resultado = calc(param1, param2, op);
+        System.output (resultado);
+        resultado = vezesMil(resultado);
+        System.output (resultado);
+        teste = System.readint();
+    };
+}
+
+func integer calc (integer a, integer b, integer op){
+    if ((op == 1))
+        then {
+            return (a + b);
+        };
+    if ((op == 2))
+        then {
+            return (a - b);
+        };
+    if ((op == 3))
+        then {
+            return (a * b);
+        };
+    if ((op == 4))
+        then {
+            return (a / b);
+        };
+}
+
+func integer vezesMil (integer valor){
+    newVar integer mult;
+    mult = 1.0E3;
+    return (valor * mult);
+}

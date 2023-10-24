@@ -1,0 +1,95 @@
+PARSER_BEGIN(Simple)
+import java.io.*;
+public class Simple {
+
+  public static void main(String args[]) throws ParseException,IOException {
+    
+ Simple parser = new Simple(new FileInputStream(args[0]));
+ parser.Simple();
+  }
+
+}
+
+PARSER_END(Simple)
+
+SKIP :
+{
+  " "
+| "\t"
+| "\n"
+| "\r"
+}
+
+TOKEN :
+{
+  <MAIN: "main">
+| <ACHAVES: "{">
+| <FCHAVES: "}">
+| <APARENTESES:"(">
+| <FPARENTESES:")">
+| <PRINT: "print">
+| <ATRIB: ":=">
+| <PV: ";">
+}
+
+TOKEN :
+{
+  <NUM : (["0"-"9"])+>
+ |< ID: ["a"-"z","A"-"Z"] ( ["a"-"z","A"-"Z","0"-"9"])*>
+
+}
+
+
+// SIMPLE -> "main" "{" COMANDOS  "}"
+
+void Simple () :
+{}
+{
+
+<MAIN> <ACHAVES> Comandos() <FCHAVES>
+<EOF> 
+
+}
+
+
+
+// COMANDOS -> COM ";"  COMANDOS'
+
+void Comandos () :
+{}
+{
+
+ Com() <PV> ComandosL()
+
+}
+
+// COMANDOS'->   COM ";" COMANDOS' | epsilon
+
+void ComandosL () :
+{}
+{
+
+ ( Com()  <PV>  ComandosL())?
+
+}
+
+
+
+// COM -> id ":=" EXP | "print" "(" EXP ")"
+
+void Com () :
+{}
+{
+
+  (<ID> <ATRIB> Exp()) | (<PRINT> <APARENTESES> Exp() <FPARENTESES>) 
+
+}
+
+
+// EXP -> num | id
+
+void Exp () :
+{}
+{
+    <NUM> | <ID>
+}

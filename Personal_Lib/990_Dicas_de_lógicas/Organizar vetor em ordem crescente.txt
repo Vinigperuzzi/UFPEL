@@ -1,0 +1,17 @@
+          for( i=0; i<10; i++ ){
+                  for( j=i+1; j<10; j++ ){
+                       if( numero[i] > numero[j] ){
+                           aux = numero[i];
+                           numero[i] = numero[j];
+                           numero[j] = aux;
+
+No caso um vetor de 10 posições.
+O primeiro for vai correndo posição por posição do vetor
+Então para i=0, ou na primeira posição, ele corre todos os seguintes, já que j=i+1, ou seja,
+começa a comparação a partir dele.
+Para cada valor menor que o que está sendo lido, o valor do primeiro passa para um auxiliar e
+troca de lugar com o maior
+Repare que todos os valores seguintes vão ficar bagunçados, mas não importa. já que o que vai ser
+classificado é o menor por primeiro, e nisso não será mexido mais.
+Depois de correr todo o vetor, a contagem passa para a segunda posição, o mesmo acontece.
+E assim vai indo até que chegue ao último.

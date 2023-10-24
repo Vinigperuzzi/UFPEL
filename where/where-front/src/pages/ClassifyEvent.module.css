@@ -1,0 +1,83 @@
+.eventVisionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding: 40px;
+    gap: 40px;
+}
+
+/* Estilos para a imagem do banner */
+.eventBannerContainer {
+    width: 50%; /* Faça o container ocupar 100% da largura */
+    height: 300px; /* Defina uma altura fixa ou use outra unidade, se necessário */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.1); /* Adicione um fundo para evitar que o container fique muito pequeno com imagens pequenas */
+    overflow: hidden; /* Garanta que o conteúdo excedente seja ocultado */
+}
+
+.eventBanner {
+    width: 100%; /* Faça a imagem ocupar 100% da largura do container */
+    height: 100%; /* Faça a imagem ocupar 100% da altura do container */
+    object-fit: cover; /* A imagem será redimensionada e cortada para preencher o container */
+}
+
+.inputUser {
+    border: none;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.7); /* Fundo branco transparente (0.7 de opacidade) */
+    padding: 10px; /* Espaçamento interno de 10px */
+    width: 100%;
+    height: 30px;
+    color: black; /* Define a cor do texto como preto */
+}
+
+.inputUser:focus {
+    outline: none; /* Remove a borda ao focar */
+}
+
+.inputUser::placeholder {
+    color: black; /* Define a cor do texto de placeholder como preto */
+}
+
+.confirmButton{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    background-color: #34A853;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: .2s;
+    width: 30%;
+}
+
+.confirmButton:hover{
+    background-color: #173e22;
+    transition: .2s;
+}
+
+.bottomForm{
+    display: flex;
+    width: 50%;
+    gap: 30px;
+}
+
+@media (max-width: 800px) {
+    .eventBannerContainer {
+        width: 70%;
+    }
+
+    .bottomForm{
+        display: flex;
+        width: 90%;
+        gap: 30px;
+    }
+}

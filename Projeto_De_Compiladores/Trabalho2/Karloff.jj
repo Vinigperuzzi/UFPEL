@@ -1,0 +1,118 @@
+PARSER_BEGIN(Karloff)
+import java.io.*;
+public class Karloff {
+
+  public static void main(String args[]) throws ParseException,IOException {
+    
+ Karloff analisador = new Karloff(new FileInputStream(args[0]));
+ analisador.Karloff();
+  }
+
+}
+
+PARSER_END(Karloff)
+
+SKIP :
+{
+  " "
+| "\t"
+| "\n"
+| "\r"
+}
+
+TOKEN :
+{
+  <VOID: "void">
+| <MAIN: "main">
+| <APAR: "(">
+| <FPAR: ")">
+| <ACHAVES: "{">
+| <FCHAVES: "}">
+| <NEWVAR: "newVar">
+| <INT: "integer">
+| <BOOL: "bool">
+| <SEMICOLON: ";">
+| <ATTRIB: "=">
+| <IF: "if">
+| <THEN: "then">
+| <WHILE: "while">
+| <REPEAT: "repeat">
+| <UNTIL: "until">
+| <RETURN: "return">
+| <SAIDA: "System.output">
+| <ENTRADA: "System.readint">
+| <TRUE: "true">
+| <FALSE: "false">
+| <SUM: "+">
+| <SUB: "-">
+| <MULT: "*">
+| <DIV: "/">
+| <AND: "&">
+| <OR: "|">
+| <BIGGER: ">">
+| <SMALLER: "<">
+| <COMPARE: "==">
+| <COLON: ",">
+| <CALLFUNC: "func">
+
+}
+
+TOKEN :
+{
+  <NUM: ( (["0"-"9"])+ ( "." (["0"-"9"])+ )? ( "E" ( ["+"] | ["-"] ) (["0"-"9"])+ )? )>
+ |< ID: ["a"-"z","A"-"Z"] ( ["a"-"z","A"-"Z","0"-"9"])* ("_" ( ["a"-"z","A"-"Z","0"-"9"])*)*>
+
+}
+
+
+
+void Karloff () :
+{Token t;}
+{
+
+(
+  <VOID> { System.out.println("Palavra reservada : void");}
+| <MAIN> { System.out.println("Palavra reservada: main");}
+| <ACHAVES> { System.out.println("Abre chaves: {");}
+| <FCHAVES> { System.out.println("Fecha chaves: }");}
+| <APAR> { System.out.println("Abre parênteses: (");}
+| <FPAR> { System.out.println("Fecha parênteses: )");}
+| t=<NUM> { System.out.println("Número: "+ t.image);}
+| t=<ID> { System.out.println("Identificador: "+ t.image);}
+| <NEWVAR> {System.out.println("Palavra reservada: newVar");}
+| <INT> {System.out.println("Palavra reservada: Nome de tipo [Inteiro]");}
+| <BOOL> {System.out.println("Palavra reservada: Nome de tipo [Bool]");}
+| <SEMICOLON> { System.out.println("Fim de comando: ;");}
+| <ATTRIB> { System.out.println("Operador: Atribuição");}
+| <IF> { System.out.println("Palavra reservada: Condicional if");}
+| <THEN> { System.out.println("Palavra reservada: Condicional then");}
+| <WHILE> { System.out.println("Palavra reservada: Repetição while");}
+| <REPEAT> { System.out.println("Palavra reservada: Repetição repeat");}
+| <UNTIL> { System.out.println("Palavra reservada: Repetição while");}
+| <RETURN> {System.out.println("Palavra reservada: return");}
+| <SAIDA> { System.out.println("Palavra reservada: Escrita no terminal");}
+| <ENTRADA> { System.out.println("Palavra reservada: Leitura da entrada padrão");}
+| <TRUE> {System.out.println("Palavra reservada: true");}
+| <FALSE> { System.out.println("Palavra reservada: false");}
+| <SUM> { System.out.println("Operador: +");}
+| <SUB> { System.out.println("Operador: -");}
+| <MULT> { System.out.println("Operador: *");}
+| <DIV> { System.out.println("Operador: /");}
+| <AND> { System.out.println("Operador: &");}
+| <OR> { System.out.println("Operador: sum");}
+| <BIGGER> { System.out.println("Operador: >");}
+| <SMALLER> { System.out.println("Operador: <");}
+| <COMPARE>  { System.out.println("Operador: ==");}
+| <COLON> { System.out.println("Separador: ,");}
+| <CALLFUNC> { System.out.println("Chamada de função: func");}
+
+)*
+<EOF> 
+
+
+}
+
+
+
+
+

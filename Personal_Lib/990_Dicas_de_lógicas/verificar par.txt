@@ -1,0 +1,39 @@
+(meuNumero % 2 == 0)
+
+function gerarDezenas () {
+    var dezenas = new Array()
+    for (i = 0; i < 6; i++){
+    dezenas.push(math.round(math.random()*60)+1)
+    }
+    return dezenas
+}
+
+na dezenas
+eu chamei a função dezenas.push() que é para adicionar valores na 
+última posição do array
+qual valor?
+o valor math.round() que é para arrendondar o valor matematico
+qual valor?
+o gerado pela função math.random()*60 que gera unm numero aleatório
+de 0 a 60, mas 0 não vale, então mais 1
+
+
+
+
+
+
+function filme(personagens, filmes, lancamentos, id)
+{
+  i = id - 1
+if (id > 0 && id <= personagens.length){
+return console.log(personagens[i] + " é um personagem do filme " + filmes[i] + " que estreou no cinema em " + lancamentos[i] + ".")
+} else {
+  return console.log("Essa não é uma opção válida.")
+}
+}
+var personagens = ["Hermione", "Trinity", "Leia"]
+var filmes = ["Harry Potter", "Matrix", "Star wars"]
+var  lancamentos = [2001, 1999, 1977]
+var id = 3
+filme(personagens, filmes, lancamentos, id)
+

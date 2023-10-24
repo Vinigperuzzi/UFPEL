@@ -1,0 +1,3 @@
+system ("cls || clear");
+
+Desse jeito pode-se usar o comando aceito pelo windows e pelo linux

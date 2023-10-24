@@ -1,0 +1,25 @@
+void main()
+{
+    newVar integer num;
+    newVar integer result;
+    newVar integer i;
+
+    num = System.readint();
+
+    if ((num < 0))
+    then {
+        System.output(1);
+        return 1;
+    };
+
+    result = 1;
+
+    repeat
+    {
+        result = (result * i);
+        i = (i + 1);
+    }
+    until ((i > num));
+
+    System.output(result);
+}

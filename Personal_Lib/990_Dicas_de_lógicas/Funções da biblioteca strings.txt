@@ -1,0 +1,88 @@
+***Para leitura da entrada padrão***
+
+fgets(nome, tamanho, stdin)  //stdin indica que é a entrada padrão
+
+Exemplo:
+
+char S[10];
+
+gets(S, 10, stdin);
+
+Não interrompe a string ao inserir um espaço, e faz a leitura até o final do arquivo ou ao encontrar um \n(enter)
+É mais segura que o scanf e não precisa da gambiarra com %[^\n]%*c para ler o espaço.
+
+
+
+
+***Copiar uma string para outra***
+
+strcpy(destino, origem);
+
+Exemplo:
+
+char S1[10], S2[10];
+	fgets(S1, 10, stdin);
+	strcpy(S2, S1);
+	printf("%d\n", S2);
+
+
+
+***Para ver o tamanho de uma string***
+
+strlen(nome);
+contabiliza quantos elementos há até o terminador \0, sem contá-lo
+
+Exemplo:
+
+char S[20];
+	fgets(S, 20, stdin);
+	printf("Você digitou %d elementos.\n", strlen(S));
+
+ATENÇÃO: Pode ser que o compilador exija o strlen como long double, %ld.
+ATENÇÃO 2: Note que com o fgets, quando o vetor é lido até que seja inserido um enter, ao invés de até o final do tamanho, o valor \n fica armazenado antes do \0
+Então em caso de printf o terminal irá dar um enter e o strlen irá ficar com um valor adicional, o do \n.
+
+Uma solução para o problema é:
+Após a leitura com o fgets, e logo após, fazer uma troca do valor \n que está na posição strlen(Nome)-1 pelo vaor \0, colocando dois terminadores, o que não tem problema.
+fgets(S, 20, stdin);
+S[strlen(C)-1] = \0;
+É uma saída... Feia, mas é uma saída!!!
+
+
+
+***Concatenação de duas strings***
+
+strcat(nome1, nome2);
+Copia o conteúdo da string nome2 para o final da string nome1.
+String nome2 permanece inalterada.
+
+Exemplo:
+
+char s1[20], s2[20];
+	fgets(S1, 20, stdin);
+	fgets(S2, 20, stdin);
+	strcat(S1, S2);
+	printf("S1 = %s\n", S1);
+
+
+
+
+***Comparar duas strings***
+strcmp(nome1, nome2);
+Retorna 0 se as duas são iguais.
+Retorna -1 se nome1 é menor no dicionário que nome2.
+Retorna +1 se nome1 é maior no dicionário que nome2.
+
+Exemplo:
+
+char s1[20], s2[20];
+	fgets(S1, 20, stdin);
+	fgets(S2, 20, stdin);
+	if (strcat(S1,S2 == 0)) printf("As strings são iguais.\n");
+		else printf("As strings são diferentes");
+
+
+
+
+
+

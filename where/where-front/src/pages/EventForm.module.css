@@ -1,0 +1,177 @@
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding: 40px;
+    gap: 40px;
+}
+
+.submitButton{
+    margin-top: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    background-color: #C10C99;
+    color: white;
+    border: none;
+    width: 70%;
+    border-radius: 20px;
+    height: 50px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.submitButton:hover{
+    background-color: #660651;
+    transition: .2s;
+}
+
+.textForm{
+    width: 100%;
+    gap: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.textForm div{
+    width: 100%;
+}
+
+.photoForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.customFileInput {
+    display: flex;
+    border-radius: 20px; /* Reduzir a borda arredondada */
+    height: 190px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in;
+    width: 60%; /* Fazer com que os itens ocupem 100% da largura do contêiner */
+    margin: 0 auto;
+    margin-top: 40px;
+    background: rgba(160, 160, 160, 0.35); /* Cor de fundo cinza com 50% de opacidade */
+    cursor: pointer; /* Adicione um cursor para indicar que é clicável */
+}
+
+.customFileInput span img{
+    height: 35px;
+}
+
+.customFileInput input[type="file"] {
+    display: none;
+    cursor: pointer;
+}
+
+/* Efeitos de hover e foco */
+.customFileInput:hover {
+    background-color: lightblue; /* Altere a cor ao passar o mouse sobre o botão */
+}
+
+.customFileInput:focus {
+    outline: none; /* Remova a borda de foco padrão do navegador */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Adicione uma sombra de foco */
+}
+
+/* Inputs */
+
+.inputContainer{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputLabel{
+    margin: 15px 2px;
+}
+
+.input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    width: 100%;
+    padding-bottom: 8px;
+}
+
+.input::placeholder{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.input:focus{
+    outline: none;
+    border-color: #ccc; 
+    box-shadow: none; 
+}
+
+.inputIconButton{
+    background-color: transparent;
+    border: none;
+    transition: .2s;
+    border-radius: 30% 30% 0 0;
+    border-bottom: 2px solid white;
+}
+
+.inputIcon{
+    border-bottom: 2px solid white;
+    padding-bottom: 8px;
+    padding-right: 5px;
+    height: 20px;
+}
+
+.inputOuterStyle{
+    display: flex;
+}
+
+.leftColumn, .rightColumn{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.leftColumn{
+    margin-left: 8%;
+}
+
+.rightColumn{
+    margin-right: 8%;
+}
+
+.deleteButton{
+    margin-top: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    background-color: #ff001e;
+    color: white;
+    border: none;
+    width: 70%;
+    border-radius: 20px;
+    height: 50px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.deleteButton:hover{
+    background-color: #9e0316;
+    transition: .2s;
+}
+
+.buttonContainer{
+    display: flex;
+    width: 55%;
+    gap: 50px;
+}

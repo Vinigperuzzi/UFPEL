@@ -1,0 +1,182 @@
+PARSER_BEGIN(Karloff)
+import java.io.*;
+public class Karloff {
+
+  public static void main(String args[]) throws ParseException,IOException {
+    
+ Karloff analisador = new Karloff(new FileInputStream(args[0]));
+ analisador.Karloff();
+  }
+
+}
+
+PARSER_END(Karloff)
+
+SKIP :
+{
+  " "
+| "\t"
+| "\n"
+| "\r"
+}
+
+TOKEN :
+{
+  <VOID: "void">
+| <MAIN: "main">
+| <INT: "integer">
+| <BOOL: "bool">
+| <IF: "if">
+| <THEN: "then">
+| <WHILE: "while">
+| <REPEAT: "repeat">
+| <UNTIL: "until">
+| <RETURN: "return">
+| <SAIDA: "System.output">
+| <ENTRADA: "System.readint">
+| <TRUE: "true">
+| <FALSE: "false">
+| <NEWVAR: "newVar">
+| <CALLFUNC: "func">
+}
+
+TOKEN :
+{
+  <ACHAVES: "{">
+| <FCHAVES: "}">
+| <APAR: "(">
+| <FPAR: ")">
+| <SEMICOLON: ";">
+| <ATTRIB: "=">
+| <SUM: "+">
+| <SUB: "-">
+| <MULT: "*">
+| <DIV: "/">
+| <AND: "&">
+| <OR: "|">
+| <BIGGER: ">">
+| <SMALLER: "<">
+| <COMPARE: "==">
+| <COLON: ",">
+}
+
+TOKEN :
+{
+  <NUM: ( (["0"-"9"])+ ( "." (["0"-"9"])+ )? ( "E" ( ["+"] | ["-"] ) (["0"-"9"])+ )? )>
+ |< ID: ["a"-"z","A"-"Z"] ( ["a"-"z","A"-"Z","0"-"9"])* ("_" ( ["a"-"z","A"-"Z","0"-"9"])*)*>
+
+}
+
+
+
+void Karloff () :
+{Token t;}
+{
+
+    main() (CallFunc())?
+
+}
+
+void main() :
+{}
+{
+  <VOID> <MAIN> <APAR> <FPAR> <ACHAVES> VarDecl() SeqComandos() <FCHAVES>
+}
+
+void VarDecl() :
+{}
+{
+    (<NEWVAR> Tipo() <ID> <SEMICOLON>)+
+}
+
+void Tipo() :
+{}
+{
+    <INT>
+|   <BOOL>
+}
+
+void SeqComandos() :
+{}
+{
+    (Comando())+
+}
+
+void Comando() :
+{}
+{
+    (<ID> ComandoL())
+|   (<IF> <APAR> Exp() <FPAR> <THEN> <ACHAVES> SeqComandos() <FCHAVES> <SEMICOLON>)
+|   (<WHILE> <APAR> Exp() <FPAR> <ACHAVES> SeqComandos() <FCHAVES> <SEMICOLON>)
+|   (<REPEAT> <ACHAVES> SeqComandos() <FCHAVES> <UNTIL> <APAR> Exp() <FPAR> <SEMICOLON>)
+|   (<RETURN> Exp() <SEMICOLON>)
+|   (<SAIDA> <APAR> Exp() <FPAR> <SEMICOLON>)
+}
+
+void ComandoL() :
+{}
+{
+  <ATTRIB> ComandoLL()
+| <APAR> (ListaExp())? <FPAR> <SEMICOLON>
+}
+
+void ComandoLL() :
+{}
+{
+  Exp() <SEMICOLON>
+| <ENTRADA> <APAR> <FPAR> <SEMICOLON>
+}
+
+void Exp() :
+{}
+{
+    (<APAR> Exp() Op() Exp() <FPAR>)
+|   Fator()
+}
+
+void Fator() :
+{}
+{
+    (<ID> (<APAR> (ListaExp())? <FPAR>)? )
+|   <NUM>
+|   <TRUE>
+|   <FALSE>
+}
+
+void Op() :
+{}
+{
+    <SUM>
+|   <SUB>
+|   <MULT>
+|   <DIV>
+|   <AND>
+|   <OR>
+|   <BIGGER>
+|   <SMALLER>
+|   <COMPARE>
+}
+
+void ListaExp() :
+{}
+{
+    Exp() (<COLON> Exp())*
+}
+
+void CallFunc() :
+{}
+{
+    ((<CALLFUNC> Tipo() <ID> <APAR> (ListaArg())? <FPAR> <ACHAVES> (VarDecl())* (SeqComandos())* <FCHAVES>) CallFuncL())
+}
+
+void CallFuncL() :
+{}
+{
+    (<CALLFUNC> Tipo() <ID> <APAR> (ListaArg())? <FPAR> <ACHAVES> (VarDecl())* (SeqComandos())* <FCHAVES>)?
+}
+
+void ListaArg() :
+{}
+{
+    Tipo() <ID> (<COLON> Tipo() <ID>)*
+}

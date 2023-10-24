@@ -1,0 +1,81 @@
+==199== Memcheck, a memory error detector
+==199== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==199== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==199== Command: ./ex
+==199== Parent PID: 8
+==199== 
+==199== error calling PR_SET_PTRACER, vgdb might block
+==199== Conditional jump or move depends on uninitialised value(s)
+==199==    at 0x48CDAD8: __vfprintf_internal (vfprintf-internal.c:1687)
+==199==    by 0x48B7EBE: printf (printf.c:33)
+==199==    by 0x1098F0: listaInfo (in /mnt/c/Users/vinig/Desktop/Pasta_VS/AEEDI/Trabalho_1/ex)
+==199==    by 0x1092F5: main (in /mnt/c/Users/vinig/Desktop/Pasta_VS/AEEDI/Trabalho_1/ex)
+==199== 
+==199== Use of uninitialised value of size 8
+==199==    at 0x48B181B: _itoa_word (_itoa.c:179)
+==199==    by 0x48CD6F4: __vfprintf_internal (vfprintf-internal.c:1687)
+==199==    by 0x48B7EBE: printf (printf.c:33)
+==199==    by 0x1098F0: listaInfo (in /mnt/c/Users/vinig/Desktop/Pasta_VS/AEEDI/Trabalho_1/ex)
+==199==    by 0x1092F5: main (in /mnt/c/Users/vinig/Desktop/Pasta_VS/AEEDI/Trabalho_1/ex)
+==199== 
+==199== Conditional jump or move depends on uninitialised value(s)
+==199==    at 0x48B182D: _itoa_word (_itoa.c:179)
+==199==    by 0x48CD6F4: __vfprintf_internal (vfprintf-internal.c:1687)
+==199==    by 0x48B7EBE: printf (printf.c:33)
+==199==    by 0x1098F0: listaInfo (in /mnt/c/Users/vinig/Desktop/Pasta_VS/AEEDI/Trabalho_1/ex)
+==199==    by 0x1092F5: main (in /mnt/c/Users/vinig/Desktop/Pasta_VS/AEEDI/Trabalho_1/ex)
+==199== 
+==199== Conditional jump or move depends on uninitialised value(s)
+==199==    at 0x48CE3A8: __vfprintf_internal (vfprintf-internal.c:1687)
+==199==    by 0x48B7EBE: printf (printf.c:33)
+==199==    by 0x1098F0: listaInfo (in /mnt/c/Users/vinig/Desktop/Pasta_VS/AEEDI/Trabalho_1/ex)
+==199==    by 0x1092F5: main (in /mnt/c/Users/vinig/Desktop/Pasta_VS/AEEDI/Trabalho_1/ex)
+==199== 
+==199== Conditional jump or move depends on uninitialised value(s)
+==199==    at 0x48CD86E: __vfprintf_internal (vfprintf-internal.c:1687)
+==199==    by 0x48B7EBE: printf (printf.c:33)
+==199==    by 0x1098F0: listaInfo (in /mnt/c/Users/vinig/Desktop/Pasta_VS/AEEDI/Trabalho_1/ex)
+==199==    by 0x1092F5: main (in /mnt/c/Users/vinig/Desktop/Pasta_VS/AEEDI/Trabalho_1/ex)
+==199== 
+==199== Conditional jump or move depends on uninitialised value(s)
+==199==    at 0x48CDAD8: __vfprintf_internal (vfprintf-internal.c:1687)
+==199==    by 0x48B7EBE: printf (printf.c:33)
+==199==    by 0x10990D: listaInfo (in /mnt/c/Users/vinig/Desktop/Pasta_VS/AEEDI/Trabalho_1/ex)
+==199==    by 0x1092F5: main (in /mnt/c/Users/vinig/Desktop/Pasta_VS/AEEDI/Trabalho_1/ex)
+==199== 
+==199== Use of uninitialised value of size 8
+==199==    at 0x48B181B: _itoa_word (_itoa.c:179)
+==199==    by 0x48CD6F4: __vfprintf_internal (vfprintf-internal.c:1687)
+==199==    by 0x48B7EBE: printf (printf.c:33)
+==199==    by 0x10990D: listaInfo (in /mnt/c/Users/vinig/Desktop/Pasta_VS/AEEDI/Trabalho_1/ex)
+==199==    by 0x1092F5: main (in /mnt/c/Users/vinig/Desktop/Pasta_VS/AEEDI/Trabalho_1/ex)
+==199== 
+==199== Conditional jump or move depends on uninitialised value(s)
+==199==    at 0x48B182D: _itoa_word (_itoa.c:179)
+==199==    by 0x48CD6F4: __vfprintf_internal (vfprintf-internal.c:1687)
+==199==    by 0x48B7EBE: printf (printf.c:33)
+==199==    by 0x10990D: listaInfo (in /mnt/c/Users/vinig/Desktop/Pasta_VS/AEEDI/Trabalho_1/ex)
+==199==    by 0x1092F5: main (in /mnt/c/Users/vinig/Desktop/Pasta_VS/AEEDI/Trabalho_1/ex)
+==199== 
+==199== Conditional jump or move depends on uninitialised value(s)
+==199==    at 0x48CE3A8: __vfprintf_internal (vfprintf-internal.c:1687)
+==199==    by 0x48B7EBE: printf (printf.c:33)
+==199==    by 0x10990D: listaInfo (in /mnt/c/Users/vinig/Desktop/Pasta_VS/AEEDI/Trabalho_1/ex)
+==199==    by 0x1092F5: main (in /mnt/c/Users/vinig/Desktop/Pasta_VS/AEEDI/Trabalho_1/ex)
+==199== 
+==199== Conditional jump or move depends on uninitialised value(s)
+==199==    at 0x48CD86E: __vfprintf_internal (vfprintf-internal.c:1687)
+==199==    by 0x48B7EBE: printf (printf.c:33)
+==199==    by 0x10990D: listaInfo (in /mnt/c/Users/vinig/Desktop/Pasta_VS/AEEDI/Trabalho_1/ex)
+==199==    by 0x1092F5: main (in /mnt/c/Users/vinig/Desktop/Pasta_VS/AEEDI/Trabalho_1/ex)
+==199== 
+==199== 
+==199== HEAP SUMMARY:
+==199==     in use at exit: 0 bytes in 0 blocks
+==199==   total heap usage: 17 allocs, 17 frees, 8,702 bytes allocated
+==199== 
+==199== All heap blocks were freed -- no leaks are possible
+==199== 
+==199== Use --track-origins=yes to see where uninitialised values come from
+==199== For lists of detected and suppressed errors, rerun with: -s
+==199== ERROR SUMMARY: 15 errors from 10 contexts (suppressed: 0 from 0)

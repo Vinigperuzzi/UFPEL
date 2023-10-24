@@ -1,0 +1,52 @@
+.description{
+    color: white;
+    text-align: center;
+    font-weight: 500;
+}
+
+.bottomContainer{
+    display: flex;
+    height: 20%;
+    justify-content: space-between;
+}
+
+.bottomContainer > input{
+    border-radius: 10px;
+}
+
+.confirmButton{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    background-color: #34A853;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .2s;
+    width: 30%;
+}
+
+.confirmButton:hover{
+    transition: .2s;
+    background-color: #185227;
+}
+
+.cancelButton{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    background-color: #EB4335;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .2s;
+    width: 30%;
+}
+
+.cancelButton:hover{
+    transition: .2s;
+    background-color: #752922;
+}
+

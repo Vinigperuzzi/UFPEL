@@ -1,0 +1,40 @@
+Esse arquivo tem a função de manter o controle dos buffers do trabalho_1
+
+pBuffer: é o buffer geral para armazenamento das variáveis necessárias para o funionamento do código.
+Variáveis como operadores de switch's, de for's e outros tipos.
+
+pBuffer:
+Tamanho: 2 inteiros + 2 ponteiros do tipo void + 10 caracteres.
+
+Posições:
+1ª ponteiro para a primeira célula
+        *(void **)(pBuffer)
+2ª ponteiro para a última célula
+        *(void **)(pBuffer + sizeof(void *))
+        *(void **)(pBuffer + sizeof(void *)) = --------->Atribuição
+3ª *qtd -> indica a quantidade de pessoas na agenda (global)
+        *(void **)(pBuffer + (sizeof(void *) * 2)) = --->Atribuição
+        *(int *)(pBuffer + (sizeof(void *) * 2)) ------->Leitura
+4ª *opSw -> Operador do switch (local)
+        *(void **)(pBuffer + (sizeof(void *) * 2) + (sizeof(int))) = --->Atribuição
+        *(int *)(pBuffer + (sizeof(void *) * 2) + (sizeof(int))) ------->Leitura
+5ª *nome -> nome para busca 10 char
+        *(void **)(pBuffer + (sizeof(void *) * 2) + (sizeof(int) * 2)) = --->Atribuição
+        *(char *)(pBuffer + (sizeof(void *) * 2) + (sizeof(int) * 2)) ------->Leitura
+
+
+pDados: é o buffer molde que receberá os dados de cada pessoa.
+
+pDados:
+Tamanho: 2 inteiros, 10 char's e 2 ponteiros pra void.
+
+Posições:
+1ª - A primeira posição é a string com 10 char para o nome.
+2ª - A segunda é o inteiro para a idade.
+        *(int *)(nova + (sizeof(char) * 10))-------------------->Atribuição/Leitura
+3ª - A terceira é o inteiro para o telefone.
+        *(int *)(nova + (sizeof(char) * 10) + sizeof(int))------>Atribuição/Leitura
+4ª - O quarto é o ponteiro para o bloco anterior.
+        *(void **)(nova + (sizeof(char) * 10) + (sizeof(int) * 2))--->Atribuição/Leitura
+5ª - O quinto é o ponteiro para o posterior.
+        *(void **)(nova + (sizeof(char) * 10) + (sizeof(int) * 2) + (sizeof(void *)))--->Atribuição/Leitura

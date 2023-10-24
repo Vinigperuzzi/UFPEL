@@ -1,0 +1,18 @@
+.mapPage{
+    height: 100%;
+}
+
+.mapContainer{
+    margin-top: 70px;
+    margin-right: 20px;
+    margin-left: 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.map{
+    border: 1px solid #1b1a1a;
+    border-radius: 30px;
+    overflow: hidden;
+}

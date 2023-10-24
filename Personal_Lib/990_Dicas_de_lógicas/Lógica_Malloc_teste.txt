@@ -1,0 +1,24 @@
+if ((p = (int *)malloc(n * sizeof(int))) == NULL) {
+		printf("Não foi possível alocar memória\n");
+		exit(1);
+	}
+	
+	
+
+
+Para matrizes
+
+int **p;
+p = (int**)malloc(sizeof(int *) * nLinhas);
+        for(i=0; i<nLinhas; i++){
+            p[i] = (int *)malloc(sizeof (int) * nColunas);
+        }
+        
+A partir de então a matriz pode ser acessada normalmente por p[][];
+
+Para dar free nessa estrutura deve-se fazer:
+
+for(i=0; i<nLinhas; i++){
+        free(p[i]);
+    }
+    free(p);

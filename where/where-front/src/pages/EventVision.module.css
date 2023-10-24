@@ -1,0 +1,173 @@
+.eventVisionContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding: 40px;
+    gap: 40px;
+}
+  
+.eventInfoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    width: 50%;
+    height: 100%;
+}
+  
+.userEvaluationContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .eventVisionContainer {
+        flex-direction: column;
+        padding: 20px;
+    }
+  
+    .eventInfoContainer,
+    .userEvaluationContainer {
+        width: 100%; /* Ocupa toda a largura disponível */
+    }
+}
+
+.confirmButton,
+.defineLembrete,
+.cancelButton,
+.evalueButton {
+    display: flex;
+    margin-top: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: white;
+    border: none;
+    width: 70%;
+    border-radius: 20px;
+    height: 40px;
+    cursor: pointer;
+    transition: .2s;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.cancelButton{
+    background-color: red;
+    transition: .2s;
+}
+
+.confirmButton {
+    background-color: #34A853;
+    transition: .2s;
+}
+
+.defineLembrete,
+.evalueButton {
+    background-color: #C10C99;
+    transition: .2s;
+}
+
+.cancelButton:hover{
+    background-color: rgb(146, 20, 20);
+    transition: .2s;
+}
+
+.confirmButton:hover{
+    background-color: #266437;
+    transition: .2s;
+}
+
+.defineLembrete:hover,
+.evalueButton:hover {
+    background-color: #721e60;
+    transition: .2s;
+}
+
+/* Estilos para a imagem do banner */
+.eventBannerContainer {
+    max-width: 90%;
+    max-height: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.1); /* Adicione um fundo para evitar que o container fique muito pequeno com imagens pequenas */
+}
+
+.eventBanner {
+    max-width: 100%; /* A imagem terá no máximo a largura do container */
+    max-height: 100%; /* A imagem terá no máximo a altura do container */
+    width: auto; /* A largura da imagem se ajustará automaticamente */
+    height: auto; /* A altura da imagem se ajustará automaticamente */
+    object-fit: cover; /* A imagem será redimensionada e cortada para preencher o container */
+}
+
+.eventInfoContianer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.microInfoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: flex-start;
+    margin-left: 8%;
+    gap: 12px;
+}
+
+.microInfoContainer span img {
+    width: 20px;
+    height: 20px;
+}
+
+.microInfoContainer span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.commentSection{
+    max-width: 500px;
+    display: flex;
+    margin: auto;
+    background: rgba(0, 0, 0, 1);
+    border-radius: 20px;
+    padding: 10px;
+    gap: 40px;
+}
+
+.comment{
+    background: #EB4335;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 20px;
+}
+
+.comment > div{
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+    gap: 10px;
+}
+
+.comment > div > p{
+    margin: 1px;
+}

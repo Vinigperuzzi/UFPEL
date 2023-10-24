@@ -1,0 +1,32 @@
+.comboboxInput{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    width: 100%;
+    padding-bottom: 6px;
+}
+
+.comboboxInput::before{
+    width: 100%;
+}
+
+.comboboxInput:focus{
+    outline: none;
+    border-color: #ccc; 
+    box-shadow: none; 
+}
+
+.placesContainer{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container{
+    width: 100% !important;
+}
+
+.optionStyle{
+    color: black;
+}

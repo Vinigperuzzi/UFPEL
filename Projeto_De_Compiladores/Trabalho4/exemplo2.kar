@@ -1,0 +1,17 @@
+void main () {
+    newVar integer teste; newVar integer resultado;
+    teste = 9;
+    System.output (teste);
+    resultado = add(2, 3);
+    System.output (resultado);
+    resultado = add(4, 3);
+    System.output (resultado);
+}
+
+func integer add (integer a, integer b){
+    if ((a > b))
+    then {
+        return (a - b);
+    };
+    return 0;
+}

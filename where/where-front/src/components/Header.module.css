@@ -1,0 +1,24 @@
+.backgroundHeader{
+    background-color: black;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    justify-content: space-between;
+}
+
+.customToggle{
+    margin: 0;
+}
+
+.linkToEvents{
+    text-decoration: none;
+    color: white;
+    transition: .2s;
+}
+
+.linkToEvents:hover{
+    color: gray;
+
+}

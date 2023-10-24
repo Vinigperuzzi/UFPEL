@@ -1,0 +1,78 @@
+.sidebar {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #050214;
+    width: 60%;
+    height: 40%;
+    border-radius: 20px;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;  /* Centraliza verticalmente os itens */
+}
+
+.title {
+    margin-top: 10px;
+}
+
+.timeInput {
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    border: none;
+    width: 50%;
+    border-radius: 20px;
+    height: 60px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+
+.inputContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;  /* ajustado para permitir espaço extra para margens */
+    margin-top: 10px;
+}
+
+.confirmButton {
+    margin-right: 2cm;  /* adicionado */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    background-color: #34A853;
+    color: white;
+    border: none;
+    width: 30%;
+    border-radius: 20px;
+    height: 60px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.cancelButton {
+    margin-left: 2cm;  /* adicionado */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    background-color: #EB4335;
+    color: white;
+    border: none;
+    width: 30%;
+    border-radius: 20px;
+    height: 60px;
+    cursor: pointer;
+    transition: .2s;
+}

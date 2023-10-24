@@ -1,0 +1,120 @@
+.title{
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.sidebar{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 100%;
+    max-width: 50%;
+    background-color: #050214;
+}
+
+.form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inputContainer{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputLabel{
+    margin: 15px 2px;
+}
+
+.input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    width: 100%;
+    padding-bottom: 8px;
+}
+
+.input::placeholder{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.input:focus{
+    outline: none;
+    border-color: #ccc; 
+    box-shadow: none; 
+}
+
+.inputIconButton{
+    background-color: transparent;
+    border: none;
+    transition: .2s;
+    border-radius: 30% 30% 0 0;
+    border-bottom: 2px solid white;
+}
+
+.inputIconButton:hover{
+    background-color: gray;
+    transition: .2s;
+}
+
+.inputIconButton:active{
+    background-color: #ce52a7;
+    transition: .2s;
+}
+
+.inputIcon{
+    border-bottom: 2px solid white;
+    padding-bottom: 8px;
+    padding-right: 5px;
+}
+
+.inputOuterStyle{
+    display: flex;
+}
+
+.signUpLink{
+    color: #C10C99;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.signUpLink:hover{
+    color: #660651;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.loginButton{
+    margin-top: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    background-color: #C10C99;
+    color: white;
+    border: none;
+    width: 100%;
+    border-radius: 20px;
+    height: 40px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.loginButton:hover{
+    background-color: #660651;
+    transition: .2s;
+}
+
+@media (max-width: 800px) {
+    .sidebar{
+        width: 100%;
+    }
+}
