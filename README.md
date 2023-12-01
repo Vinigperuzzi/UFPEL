@@ -1,2 +1,2 @@
 # UFPEL
-Repository for all disciplines of my graduation on Computer Science on UFPEL
+This repo do not have any specialities, just contain the code for the disciplines in my graduation
